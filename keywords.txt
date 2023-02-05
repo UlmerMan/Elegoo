@@ -1,0 +1,55 @@
+#######################################
+# Syntax Coloring Map For Car
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+car             KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+init            KEYWORD2
+forward         KEYWORD2
+backward        KEYWORD2
+left            KEYWORD2
+right           KEYWORD2
+stop            KEYWORD2
+forwardT        KEYWORD2
+backT           KEYWORD2
+leftT           KEYWORD2
+rightT          KEYWORD2
+getDistance     KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+trig            LITERAL1
+echo            LITERAL1
+defaultVersion  LITERAL1
+defaultSpeed    LITERAL1
+RECV_PIN        LITERAL1
+LED             LITERAL1
+L               LITERAL1      
+UNKNOWN_L       LITERAL1
+FORWARD         LITERAL1
+BACK            LITERAL1
+LEFT            LITERAL1
+RIGHT           LITERAL1
+STOP            LITERAL1
+KEY1            LITERAL1
+KEY2            LITERAL1
+KEY3            LITERAL1
+KEY4            LITERAL1
+KEY5            LITERAL1
+KEY6            LITERAL1
+KEY7            LITERAL1
+KEY8            LITERAL1
+KEY9            LITERAL1
+KEY0            LITERAL1
+KEY_STAR        LITERAL1
+KEY_HASH        LITERAL1
