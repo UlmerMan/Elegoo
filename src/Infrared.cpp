@@ -1,27 +1,35 @@
 #include "Infrared.h"
+#include <IRremote.hpp>
 
-//unsigned long elegoo::getIR(){
-//  if (irrecv->decode()) {
-//    irrecv->resume();
-    //unsigned long var = IrReceiver.decodedIRData.decodedRawData;
-    //return var;
-//  }
-//}
 
-//char elegoo::getIRdec(){
-//  switch(getIR()){
-//    case FORWARD: return 1;   break;
-//    case BACK:    return 2;   break;
-//    case LEFT:    return 3;   break;
-//    case RIGHT:   return 4;   break;
-//    case STOP:    return 5;   break;
-//    case KEY1:    return 6;   break;
-//    case KEY2:    return 7;   break;
-//    default:                  break;
-//  }
-//}
+unsigned long elegoo::getIR(){
+  if (IrReceiver.decode()) {
+    unsigned long int val = IrReceiver.decodedIRData.decodedRawData;
+    IrReceiver.resume();
+    return val;
+  }
+  else {
+    return 0;
+  }
+}
 
-/*
+void elegoo::IRbegin(){
+  IrReceiver.begin(RECV_PIN, LED);
+}
+
+char elegoo::getIRdec(){
+  switch(getIR()){
+    case FORWARD: return 1;   break;
+    case BACK:    return 2;   break;
+    case LEFT:    return 3;   break;
+    case RIGHT:   return 4;   break;
+    case STOP:    return 5;   break;
+    case KEY1:    return 6;   break;
+    case KEY2:    return 7;   break;
+    default:                  break;
+  }
+}
+
 void elegoo::remoteIR(){
   int preMillis;
   switch(getIRdec()){
@@ -60,19 +68,3 @@ void elegoo::remoteIRT(int time){
     delay(1);
   }
 }
-
-int elegoo::getLightR(){
-  int r = !digitalRead(10);
-  return r;
-}
-
-int elegoo::getLightM(){
-  int m = !digitalRead(4);
-  return m;
-}
-
-int elegoo::getLightL(){
-  int l = !digitalRead(2);
-  return l;
-}
-*/

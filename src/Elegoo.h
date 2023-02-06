@@ -2,7 +2,6 @@
 #define car_H
 #include <Arduino.h>
 #include <Servo.h>
-//#include <IRremote.h>
 
 
 //--------Ultrasonic Sensor---------//
@@ -66,9 +65,9 @@ class elegoo
     void  leftT(int speed, float time);
     void  rightT(int speed, float time);
     unsigned long getIR();
-    //char  getIRdec();
-    //void  remoteIR();
-    //void  remoteIRT(int time);
+    char  getIRdec();
+    void  remoteIR();
+    void  remoteIRT(int time);
     int   getLightR();
     int   getLightM();
     int   getLightL();
@@ -78,6 +77,7 @@ class elegoo
     void delay(unsigned long time);
     void remote();
     float regler(float ist, float soll, int p_faktor);
+    void IRbegin();
   private:
     Servo  *libServo;
     int in1 = 0;
