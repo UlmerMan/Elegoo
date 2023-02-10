@@ -1,5 +1,7 @@
 #include "movement.h"
 
+float i_val, lastDifference;
+
 /*define forward function*/
 void elegoo::forward(int speed){
   analogWrite(ENA,speed);
@@ -83,8 +85,14 @@ void elegoo::rightT(int speed, float time){
 }
 
 
-float elegoo::regler(float ist, float soll, int p_faktor){
+float elegoo::regler(float ist, float soll, int p_faktor, float d_faktor, float i_faktor){
   float abweichung = soll - ist;
-  float ergebnis  = (abweichung * p_faktor);
+
+  float d_val = abweichung - lastDifference;
+
+  float ergebnis = (abweichung * p_faktor) + (d_val * d_faktor)+(i_val*i_faktor);
+
+  lastDifference = abweichung;
+  i_val= i_val + lastDifference;
   return ergebnis;
 }

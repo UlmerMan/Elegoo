@@ -61,6 +61,7 @@ class elegoo
     void  stop();
     long  getDistance();
     long  getDistance(int angle);
+    long  getDistanceReturn(int angle);
     void  forwardT(int speed, float time);
     void  backT(int speed, float time);
     void  leftT(int speed, float time);
@@ -77,7 +78,7 @@ class elegoo
     char getBTdec();
     void delay(unsigned long time);
     void remote();
-    float regler(float ist, float soll, int p_faktor);
+    float regler(float ist, float soll, int p_faktor, float d_faktor, float i_faktor);
     void IRbegin();
     void keepDistance();
     void enableKeepDistance();
