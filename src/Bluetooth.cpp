@@ -28,3 +28,15 @@ char elegoo::getBTdec(){
     default:                    break;
   }
 }
+
+void elegoo::BTremote(){
+  int dec;
+  switch(getBT()){
+    case FORWARD: dec = 'f'; forward();    break;
+    case BACK:    dec = 'b'; back();       break;
+    case LEFT:    dec = 'l'; left();       break;
+    case RIGHT:   dec = 'r'; right();      break;
+    case STOP:    dec = 's'; stop();       break;
+    default:                    break;
+  }
+}

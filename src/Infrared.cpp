@@ -30,7 +30,7 @@ char elegoo::getIRdec(){
   }
 }
 
-void elegoo::remoteIR(){
+void elegoo::IRremote(){
   int preMillis;
   switch(getIRdec()){
     case 1: 
@@ -62,7 +62,7 @@ void elegoo::remoteIR(){
   }
 }
 
-void elegoo::remoteIRT(int time){
+void elegoo::IRremoteT(int time){
   for(int i = time; i > 0; i--){
     remote();
     delay(1);

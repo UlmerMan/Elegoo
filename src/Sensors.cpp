@@ -1,6 +1,8 @@
 #include "Sensors.h"
 
 bool keepDistanceState = 1;
+bool IRremoteState = 0;
+bool BTremoteState = 0;
 int  keepDistanceValue = 10;
 
 long elegoo::getDistance() {
@@ -54,8 +56,12 @@ void elegoo::line(){
 
 void elegoo::delay(unsigned long time){
   for(unsigned long i = 0; i < time; i++) {
-    getBTdec();
-    getIRdec();
+    if(IRremoteState){
+      IRremote();
+    }
+    if(BTremoteState){
+      BTremote();
+    }
     keepDistance();
     delay(1);
   }
@@ -80,6 +86,22 @@ void elegoo::disableKeepDistance(){
 
 void elegoo::setKeepDistance(int val){
   keepDistanceValue = val;
+}
+
+void elegoo::enableIRremote(){
+  IRremoteState = 1;
+}
+
+void elegoo::disableIRremote(){
+  IRremoteState = 0;
+}
+
+void elegoo::enableBTremote(){
+  BTremoteState = 1;
+}
+
+void elegoo::disableBTremote(){
+  BTremoteState = 0;
 }
 
 //TODO delay for IRremote

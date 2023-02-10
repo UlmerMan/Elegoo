@@ -85,7 +85,7 @@ void elegoo::rightT(int speed, float time){
 }
 
 
-float elegoo::regler(float ist, float soll, int p_faktor, float d_faktor, float i_faktor){
+float elegoo::controler(float ist, float soll, int p_faktor, float d_faktor, float i_faktor){
   float abweichung = soll - ist;
 
   float d_val = abweichung - lastDifference;
@@ -93,6 +93,6 @@ float elegoo::regler(float ist, float soll, int p_faktor, float d_faktor, float 
   float ergebnis = (abweichung * p_faktor) + (d_val * d_faktor)+(i_val*i_faktor);
 
   lastDifference = abweichung;
-  i_val= i_val + lastDifference;
+  i_val += lastDifference;
   return ergebnis;
 }

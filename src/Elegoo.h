@@ -68,8 +68,8 @@ class elegoo
     void  rightT(int speed, float time);
     unsigned long getIR();
     char  getIRdec();
-    void  remoteIR();
-    void  remoteIRT(int time);
+    void  IRremote();
+    void  IRremoteT(int time);
     int   getLightR();
     int   getLightM();
     int   getLightL();
@@ -78,12 +78,17 @@ class elegoo
     char getBTdec();
     void delay(unsigned long time);
     void remote();
-    float regler(float ist, float soll, int p_faktor, float d_faktor, float i_faktor);
+    float controler(float ist, float soll, int p_faktor, float d_faktor, float i_faktor);
     void IRbegin();
     void keepDistance();
     void enableKeepDistance();
     void disableKeepDistance();
     void setKeepDistance(int val);
+    void enableIRremote();
+    void disableIRremote();
+    void enableBTremote();
+    void disableBTremote();
+    void BTremote();
   private:
     Servo *libServo;
     int in1 = 0;
