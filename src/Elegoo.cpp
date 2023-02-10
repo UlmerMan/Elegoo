@@ -1,5 +1,5 @@
 #include "Elegoo.h"
-
+#include <Servo.h>
 
 //www.elegoo.com
 //2016.09.12
@@ -82,7 +82,8 @@ elegoo::elegoo(int version) {
   pinMode(LineTeacking_Pin_Middle, INPUT);
   pinMode(LineTeacking_Pin_Left, INPUT);
   Servo libServo;
-  //libServo->attach(3);
+  libServo.attach(3);
+  IRbegin();
   //IRrecv irrecv(RECV_PIN);
   //irrecv->begin(RECV_PIN, LED);
 }

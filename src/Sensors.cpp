@@ -1,5 +1,8 @@
 #include "Sensors.h"
 
+bool keepDistanceState = 1;
+int  keepDistanceValue = 10;
+
 long elegoo::getDistance() {
   digitalWrite(trig, LOW);
   delayMicroseconds(5);
@@ -9,6 +12,15 @@ long elegoo::getDistance() {
   long duration = pulseIn(echo, HIGH);
   long cm = (duration/2) / 29.1;
   return cm;
+}
+
+long elegoo::getDistance(int angle) {
+  libServo->write(angle);
+  return getDistance();
+}
+
+long elegoo::getDistanceReturn(int angle){
+
 }
 
 int elegoo::getLightR(){
@@ -39,3 +51,35 @@ void elegoo::line(){
     while(elegoo::getLightL() == 0);
   }
 }
+
+void elegoo::delay(unsigned long time){
+  for(unsigned long i = 0; i < time; i++) {
+    getBTdec();
+    getIRdec();
+    keepDistance();
+    delay(1);
+  }
+}
+
+void elegoo::keepDistance(){
+  if(keepDistanceState){
+    int distance = getDistance();
+    if(distance < keepDistanceValue){
+      stop();
+    }
+  }
+}
+
+void elegoo::enableKeepDistance(){
+  keepDistanceState = 1;
+}
+
+void elegoo::disableKeepDistance(){
+  keepDistanceState = 0;
+}
+
+void elegoo::setKeepDistance(int val){
+  keepDistanceValue = val;
+}
+
+//TODO delay for IRremote

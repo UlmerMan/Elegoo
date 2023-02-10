@@ -1,13 +1,5 @@
 #include "Bluetooth.h"
 
-void elegoo::delay(unsigned long time){
-  for(unsigned long i = 0; i < time; i++) {
-    getBTdec();
-    //getIRdec();
-    delay(1);
-  }
-}
-
 unsigned long elegoo::getBT(){
   if(Serial.available()){
     unsigned long val = Serial.read();

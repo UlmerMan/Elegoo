@@ -1,5 +1,5 @@
-#ifndef car_H
-#define car_H
+#ifndef elegoo_H
+#define elegoo_H
 #include <Arduino.h>
 #include <Servo.h>
 
@@ -60,6 +60,7 @@ class elegoo
     void  right();
     void  stop();
     long  getDistance();
+    long  getDistance(int angle);
     void  forwardT(int speed, float time);
     void  backT(int speed, float time);
     void  leftT(int speed, float time);
@@ -78,8 +79,12 @@ class elegoo
     void remote();
     float regler(float ist, float soll, int p_faktor);
     void IRbegin();
+    void keepDistance();
+    void enableKeepDistance();
+    void disableKeepDistance();
+    void setKeepDistance(int val);
   private:
-    Servo  *libServo;
+    Servo *libServo;
     int in1 = 0;
     int in2 = 0;
     int in3 = 0;
