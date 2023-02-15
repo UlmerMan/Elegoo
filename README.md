@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-### Commands
+### First Commands
 
 | **Command** | **Explenation** |
 |:---:|---|
