@@ -46,10 +46,6 @@ class elegoo
 {
   public:
     elegoo(int version);  //Constructor
-    /**
-    This is the functiom to Initialze the Library.
-    Write the Version Number of your Robot into the brackets.
-    */
     void  forward(int speed);
     void  back(int speed);
     void  left(int speed);
@@ -77,8 +73,6 @@ class elegoo
     unsigned long getBT();
     char getBTdec();
     void delay(unsigned long time);
-    void remote();
-    float controler(float ist, float soll, int p_faktor, float d_faktor, float i_faktor);
     void IRbegin();
     void keepDistance();
     void enableKeepDistance();
@@ -89,6 +83,10 @@ class elegoo
     void enableBTremote();
     void disableBTremote();
     void BTremote();
+    bool forwardDistance(int distance, int speed);
+    bool forwardDistance(int distance);
+    void backDistance(int distance, int speed);
+    void backDistance(int distance);
   private:
     Servo *libServo;
     int in1 = 0;
@@ -97,6 +95,24 @@ class elegoo
     int in4 = 0;
     int ENA = 0;
     int ENB = 0;
+    int  keepDistanceValue = 10;
+};
+
+class controler
+{
+  public:
+    controler(int p_factor, float d_factor, float i_factor, int max);
+    float compute(int is, int should);
+    void  setPFactor(int factor);
+    void  setIFactor(int factor);
+    void  setDFactor(int factor);
+    void  setMax(int max);
+  private:
+    int Kp;
+    int maxOut;
+    float Kd;
+    float Ki;
+    float lastDifference;
 };
 
 //#if !defined(NO_GLOBAL_INSTANCES) && !defined(NO_GLOBAL_CAR)

@@ -1,10 +1,8 @@
 #include "Elegoo.h"
 #include <Servo.h>
 
-//www.elegoo.com
-//2016.09.12
-
-
+// www.elegoo.com
+// 2016.09.12
 
 //    The direction of the car's movement
 //  ENA   ENB   IN1   IN2   IN3   IN4   Description
@@ -15,7 +13,6 @@
 //  HIGH  HIGH  LOW   LOW   LOW   LOW   Car is stoped
 //  HIGH  HIGH  HIGH  HIGH  HIGH  HIGH  Car is stoped
 //  LOW   LOW   N/A   N/A   N/A   N/A   Car is stoped
-
 
 //    Left motor truth table
 //  ENA         IN1               IN2         Description
@@ -41,39 +38,43 @@
 //  backward      forward         Car is turning left
 //  backward      backward        elegoo is running backwards
 
-//Constructor
+// Constructor
 
-elegoo::elegoo(int version) {
-  if(version == 1){
-    in1=9;
-    in2=8;
-    in3=7;
-    in4=6;
-    ENA=10;
-    ENB=5;
+elegoo::elegoo(int version)
+{
+  if (version == 1)
+  {
+    in1 = 9;
+    in2 = 8;
+    in3 = 7;
+    in4 = 6;
+    ENA = 10;
+    ENB = 5;
   }
-  if(version == 2){
-    in1=6;
-    in2=7;
-    in3=8;
-    in4=9;
-    ENA=5;
-    ENB=11;
+  if (version == 2)
+  {
+    in1 = 6;
+    in2 = 7;
+    in3 = 8;
+    in4 = 9;
+    ENA = 5;
+    ENB = 11;
   }
-  if(version == 3){ 
-    in1=7;
-    in2=8;
-    in3=9;
-    in4=11;
-    ENA=5;
-    ENB=6;
- }
-  pinMode(in1,OUTPUT);
-  pinMode(in2,OUTPUT);
-  pinMode(in3,OUTPUT);
-  pinMode(in4,OUTPUT);
-  pinMode(ENA,OUTPUT);
-  pinMode(ENB,OUTPUT);
+  if (version == 3)
+  {
+    in1 = 7;
+    in2 = 8;
+    in3 = 9;
+    in4 = 11;
+    ENA = 5;
+    ENB = 6;
+  }
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  pinMode(in3, OUTPUT);
+  pinMode(in4, OUTPUT);
+  pinMode(ENA, OUTPUT);
+  pinMode(ENB, OUTPUT);
   pinMode(trig, OUTPUT);
   pinMode(echo, INPUT);
   pinMode(LED, OUTPUT);
@@ -84,6 +85,7 @@ elegoo::elegoo(int version) {
   Servo libServo;
   libServo.attach(3);
   IRbegin();
-  //IRrecv irrecv(RECV_PIN);
-  //irrecv->begin(RECV_PIN, LED);
+
+  // IRrecv irrecv(RECV_PIN);
+  // irrecv->begin(RECV_PIN, LED);
 }

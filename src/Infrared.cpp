@@ -64,7 +64,7 @@ void elegoo::IRremote(){
 
 void elegoo::IRremoteT(int time){
   for(int i = time; i > 0; i--){
-    remote();
+    IRremote();
     delay(1);
   }
 }

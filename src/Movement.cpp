@@ -1,6 +1,8 @@
-#include "movement.h"
+#include "Movement.h"
 
-float i_val, lastDifference;
+//TODO logging of movement
+
+controler libPID(0.3, 0.2, 0.0005, 255);
 
 /*define forward function*/
 void elegoo::forward(int speed){
@@ -84,15 +86,39 @@ void elegoo::rightT(int speed, float time){
   stop();
 }
 
+//TODO PID
 
-float elegoo::controler(float ist, float soll, int p_faktor, float d_faktor, float i_faktor){
-  float abweichung = soll - ist;
+bool elegoo::forwardDistance(int distance, int speed){
+  int startDistance = getDistance(90);
 
-  float d_val = abweichung - lastDifference;
+  if (startDistance > (distance + keepDistanceValue)){
+    return 0;
+  }
 
-  float ergebnis = (abweichung * p_faktor) + (d_val * d_faktor)+(i_val*i_faktor);
+  int should = startDistance - distance;
+  forward(speed);
 
-  lastDifference = abweichung;
-  i_val += lastDifference;
-  return ergebnis;
+  while(getDistance(90)>should){
+    elegoo::delay(1);
+  }
+  stop();
+}
+
+void elegoo::backDistance(int distance, int speed){
+  int startDistance = getDistance(90);
+  int should = startDistance + distance;
+  
+  back(speed);
+  
+  while(getDistance(90)<should);
+  stop();
+}
+
+bool elegoo::forwardDistance(int distance){
+  bool val = elegoo::forwardDistance(distance, 255);
+  return val;
+}
+
+void elegoo::backDistance(int distance){
+  elegoo::backDistance(distance, 255);
 }

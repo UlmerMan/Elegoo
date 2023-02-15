@@ -3,7 +3,7 @@
 bool keepDistanceState = 1;
 bool IRremoteState = 0;
 bool BTremoteState = 0;
-int  keepDistanceValue = 10;
+int  max = 180;
 
 long elegoo::getDistance() {
   digitalWrite(trig, LOW);
@@ -17,12 +17,18 @@ long elegoo::getDistance() {
 }
 
 long elegoo::getDistance(int angle) {
+  if(angle > max){
+    angle = 180;
+  }
   libServo->write(angle);
   return getDistance();
 }
 
 long elegoo::getDistanceReturn(int angle){
-  
+  int current = libServo->read();
+  long val = getDistance(angle);
+  libServo->write(current);
+  return val;
 }
 
 int elegoo::getLightR(){
@@ -103,5 +109,3 @@ void elegoo::enableBTremote(){
 void elegoo::disableBTremote(){
   BTremoteState = 0;
 }
-
-//TODO delay for IRremote
