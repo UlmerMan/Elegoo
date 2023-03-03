@@ -16,7 +16,7 @@ long elegoo::getDistance() {
   return cm;
 }
 
-long elegoo::getDistance(int angle) {
+long elegoo::getDistanceS(int angle) {
   if(angle > max){
     angle = 180;
   }
@@ -26,7 +26,7 @@ long elegoo::getDistance(int angle) {
 
 long elegoo::getDistanceReturn(int angle){
   int current = libServo->read();
-  long val = getDistance(angle);
+  long val = getDistanceS(angle);
   libServo->write(current);
   return val;
 }
