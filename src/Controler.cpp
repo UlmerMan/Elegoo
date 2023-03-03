@@ -4,11 +4,10 @@ float i_val, lastDifference;
 
 //TODO functions to edit parameters
 
-controler::controler(int p_factor, float d_factor, float i_factor, int max){
+controler::controler(int p_factor, float d_factor, float i_factor){
   Kp = p_factor;
   Kd = d_factor;
   Ki = i_factor;
-  maxOut = max;
 }
 
 float controler::compute(int is, int should){
@@ -20,10 +19,6 @@ float controler::compute(int is, int should){
 
   lastDifference = difference;
   i_val += lastDifference;
-  
-  if (result > maxOut){
-    result = maxOut;
-  }
   
   return result;
 }
@@ -38,8 +33,4 @@ void controler::setIFactor(int factor){
 
 void controler::setDFactor(int factor){
   Kd = factor;
-}
-
-void controler::setMax(int max){
-  maxOut = max;
 }

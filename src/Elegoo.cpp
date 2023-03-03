@@ -41,10 +41,11 @@
 
 // Constructor
 
-elegoo::elegoo(int version)
+elegoo::elegoo(int vers)
 {
-  if (version == 1)
+  if (vers == 1)
   {
+    vers = version;
     in1 = 9;
     in2 = 8;
     in3 = 7;
@@ -52,8 +53,9 @@ elegoo::elegoo(int version)
     ENA = 10;
     ENB = 5;
   }
-  if (version == 2)
+  if (vers == 2)
   {
+    vers = version;
     in1 = 6;
     in2 = 7;
     in3 = 8;
@@ -61,8 +63,9 @@ elegoo::elegoo(int version)
     ENA = 5;
     ENB = 11;
   }
-  if (version == 3)
+  if (vers == 3)
   {
+    vers = version;
     in1 = 7;
     in2 = 8;
     in3 = 9;

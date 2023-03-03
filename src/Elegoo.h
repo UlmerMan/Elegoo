@@ -45,7 +45,7 @@
 class elegoo
 {
   public:
-    elegoo(int version);  //Constructor
+    elegoo(int vers);  //Constructor
     void  forward(int speed);
     void  back(int speed);
     void  left(int speed);
@@ -101,13 +101,14 @@ class elegoo
     int in4 = 0;
     int ENA = 0;
     int ENB = 0;
-    int  keepDistanceValue = 10;
+    int version;
+    int keepDistanceValue = 10;
 };
 
 class controler
 {
   public:
-    controler(int p_factor, float d_factor, float i_factor, int max);
+    controler(int p_factor, float d_factor, float i_factor);
     float compute(int is, int should);
     void  setPFactor(int factor);
     void  setIFactor(int factor);
@@ -115,7 +116,6 @@ class controler
     void  setMax(int max);
   private:
     int Kp;
-    int maxOut;
     float Kd;
     float Ki;
     float lastDifference;
