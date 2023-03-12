@@ -1,18 +1,33 @@
 # About
 
+This is a library for Elegoo Smart Car Robot Kit.
+
 ## Getting Started
 
 ### Commands
 
-| **Command** | **Explenation** |
-|:---:|---|
-| car.init() | This argument is needed in every code. It is to initialize the the library.  In the brackets you can put the version of your robot. The default version is 3. |
-| car.forward()<br>  car.backward()<br>  car.left()<br>  car.right()<br>  car.stop() | These arguments explain themself. Into the brackets you can put a number between 1 and 256 for the speed. The default speed is 255. |
-| car.forwardT() <br>   car.backwardT() <br>   car.leftT() <br>   car.rightT() | The arguments function just like the others but you have to put the time and the speed into the brackets. <br> With a syntax like this: <br> ``` car.forwardT(SPEED, TIME); ``` <br>You can choose a number between 1 and 255.  |
-| car.getDistance() | This is a function to get the distance from the Ultrasonic sensor. It returns it as an Integer. |
+|                         **Command**                          | **Explenation**                                              |
+| :----------------------------------------------------------: | ------------------------------------------------------------ |
+|          Constructor<br />e. g. elegoo car(version)          | You have to put the version in quotes in the brackets. You can see the Supported Versions in the table below. |
+| forward() <br />backward()<br>  left()<br>  right()<br>  stop() | These arguments explain themselves. Into the brackets you can put a number between 1 and 256 for the speed. The default speed is 255. |
+|  forwardT() <br>   backwardT() <br>   leftT() <br>rightT()   | The arguments function just like the others but you have to put the time and the speed into the brackets. <br> With a syntax like this: <br> ``` car.forwardT(SPEED, TIME); ``` <br>You can choose a number between 1 and 255. |
+|                        getDistance()                         | This is a function to get the distance from the Ultrasonic sensor. It returns it as an Integer. |
+
+## Supported Versions
+
+| Version | Comment                                               |
+| ------- | ----------------------------------------------------- |
+| v1      | e. g. elegoo car ("v1")                               |
+| v2      | e. g. elegoo car ("v2")                               |
+| v3      | e. g. elegoo car ("v3")                               |
+| v4.0    | e. g. elegoo car ("v4.0")  **!!!work in progress!!!** |
+| v4.1    | e. g. elegoo car ("v4.1")  **!!!work in progress!!!** |
+| v4.2    | e. g. elegoo car ("v4.2")  **!!!work in progress!!!** |
+
 
 
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
