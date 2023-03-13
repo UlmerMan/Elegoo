@@ -15,14 +15,14 @@ This is a library for Elegoo Smart Car Robot Kit.
 
 ## Supported Versions
 
-| Version | Comment                                               |
-| ------- | ----------------------------------------------------- |
-| v1      | e. g. elegoo car ("v1")                               |
-| v2      | e. g. elegoo car ("v2")                               |
-| v3      | e. g. elegoo car ("v3")                               |
-| v4.0    | e. g. elegoo car ("v4.0")  **!!!work in progress!!!** |
-| v4.1    | e. g. elegoo car ("v4.1")  **!!!work in progress!!!** |
-| v4.2    | e. g. elegoo car ("v4.2")  **!!!work in progress!!!** |
+| Version | Comment                                                  |
+| ------- | -------------------------------------------------------- |
+| v1      | e. g. elegoo car ("v1")    Elegoo Smart Car Robot Kit v1 |
+| v2      | e. g. elegoo car ("v2")    Elegoo Smart Car Robot Kit v2 |
+| v3      | e. g. elegoo car ("v3")    Elegoo Smart Car Robot Kit v3 |
+| v4.0    | e. g. elegoo car ("v4.0")  **!!!work in progress!!!**    |
+| v4.1    | e. g. elegoo car ("v4.1")  **!!!work in progress!!!**    |
+| v4.2    | e. g. elegoo car ("v4.2")  **!!!work in progress!!!**    |
 
 
 
