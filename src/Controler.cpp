@@ -2,8 +2,6 @@
 
 float i_val, lastDifference;
 
-//TODO functions to edit parameters
-
 controler::controler(int p_factor, float d_factor, float i_factor){
   Kp = p_factor;
   Kd = d_factor;
