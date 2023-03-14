@@ -45,7 +45,7 @@
 class elegoo
 {
   public:
-    elegoo(int vers);  //Constructor
+    elegoo(int version);  //Constructor
     void  forward(int speed);
     void  back(int speed);
     void  left(int speed);
@@ -73,6 +73,11 @@ class elegoo
     unsigned long getBT();
     char getBTdec();
     void delay(unsigned long time);
+<<<<<<< Updated upstream
+    void remote();
+    float regler(float ist, float soll, int p_faktor);
+    void IRbegin();
+=======
     void IRbegin();
     void keepDistance();
     void enableKeepDistance();
@@ -87,6 +92,7 @@ class elegoo
     bool forwardDistance(int distance);
     void backDistance(int distance, int speed);
     void backDistance(int distance);
+>>>>>>> Stashed changes
   private:
     Servo *libServo;
     int in1 = 0;
@@ -95,14 +101,13 @@ class elegoo
     int in4 = 0;
     int ENA = 0;
     int ENB = 0;
-    int version;
-    int keepDistanceValue = 10;
+    int  keepDistanceValue = 10;
 };
 
 class controler
 {
   public:
-    controler(int p_factor, float d_factor, float i_factor);
+    controler(int p_factor, float d_factor, float i_factor, int max);
     float compute(int is, int should);
     void  setPFactor(int factor);
     void  setIFactor(int factor);
@@ -110,6 +115,7 @@ class controler
     void  setMax(int max);
   private:
     int Kp;
+    int maxOut;
     float Kd;
     float Ki;
     float lastDifference;

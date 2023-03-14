@@ -5,6 +5,14 @@ bool IRremoteState = 0;
 bool BTremoteState = 0;
 int  max = 180;
 
+<<<<<<< Updated upstream
+=======
+bool keepDistanceState = 1;
+bool IRremoteState = 0;
+bool BTremoteState = 0;
+int  max = 180;
+
+>>>>>>> Stashed changes
 long elegoo::getDistance() {
   digitalWrite(trig, LOW);
   delayMicroseconds(5);
@@ -58,6 +66,109 @@ void elegoo::line(){
     left();
     while(elegoo::getLightL() == 0);
   }
+<<<<<<< Updated upstream
+=======
+}
+
+void elegoo::delay(unsigned long time){
+  for(unsigned long i = 0; i < time; i++) {
+    if(IRremoteState){
+      IRremote();
+    }
+    if(BTremoteState){
+      BTremote();
+    }
+    keepDistance();
+    delay(1);
+  }
+}
+
+void elegoo::keepDistance(){
+  if(keepDistanceState){
+    int distance = getDistance();
+    if(distance < keepDistanceValue){
+      stop();
+    }
+  }
+}
+
+void elegoo::enableKeepDistance(){
+  keepDistanceState = 1;
+}
+
+void elegoo::disableKeepDistance(){
+  keepDistanceState = 0;
+}
+
+void elegoo::setKeepDistance(int val){
+  keepDistanceValue = val;
+}
+
+void elegoo::enableIRremote(){
+  IRremoteState = 1;
+}
+
+void elegoo::disableIRremote(){
+  IRremoteState = 0;
+}
+
+void elegoo::enableBTremote(){
+  BTremoteState = 1;
+}
+
+void elegoo::disableBTremote(){
+  BTremoteState = 0;
+>>>>>>> Stashed changes
+}
+
+void elegoo::delay(unsigned long time){
+  for(unsigned long i = 0; i < time; i++) {
+    if(IRremoteState){
+      IRremote();
+    }
+    if(BTremoteState){
+      BTremote();
+    }
+    keepDistance();
+    delay(1);
+  }
+}
+
+void elegoo::keepDistance(){
+  if(keepDistanceState){
+    int distance = getDistance();
+    if(distance < keepDistanceValue){
+      stop();
+    }
+  }
+}
+
+void elegoo::enableKeepDistance(){
+  keepDistanceState = 1;
+}
+
+void elegoo::disableKeepDistance(){
+  keepDistanceState = 0;
+}
+
+void elegoo::setKeepDistance(int val){
+  keepDistanceValue = val;
+}
+
+void elegoo::enableIRremote(){
+  IRremoteState = 1;
+}
+
+void elegoo::disableIRremote(){
+  IRremoteState = 0;
+}
+
+void elegoo::enableBTremote(){
+  BTremoteState = 1;
+}
+
+void elegoo::disableBTremote(){
+  BTremoteState = 0;
 }
 
 void elegoo::delay(unsigned long time){

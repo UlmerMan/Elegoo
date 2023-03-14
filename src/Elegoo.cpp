@@ -1,6 +1,7 @@
 #include "Elegoo.h"
 #include <Servo.h>
 
+
 // www.elegoo.com
 // 2016.09.12
 
@@ -40,11 +41,10 @@
 
 // Constructor
 
-elegoo::elegoo(int vers)
+elegoo::elegoo(int version)
 {
-  if (vers == 1)
+  if (version == 1)
   {
-    vers = version;
     in1 = 9;
     in2 = 8;
     in3 = 7;
@@ -52,9 +52,8 @@ elegoo::elegoo(int vers)
     ENA = 10;
     ENB = 5;
   }
-  if (vers == 2)
+  if (version == 2)
   {
-    vers = version;
     in1 = 6;
     in2 = 7;
     in3 = 8;
@@ -62,9 +61,8 @@ elegoo::elegoo(int vers)
     ENA = 5;
     ENB = 11;
   }
-  if (vers == 3)
+  if (version == 3)
   {
-    vers = version;
     in1 = 7;
     in2 = 8;
     in3 = 9;
@@ -86,9 +84,15 @@ elegoo::elegoo(int vers)
   pinMode(LineTeacking_Pin_Middle, INPUT);
   pinMode(LineTeacking_Pin_Left, INPUT);
   Servo libServo;
+<<<<<<< Updated upstream
+  //libServo->attach(3);
+  //IRrecv irrecv(RECV_PIN);
+  //irrecv->begin(RECV_PIN, LED);
+=======
   libServo.attach(3);
   IRbegin();
 
   // IRrecv irrecv(RECV_PIN);
   // irrecv->begin(RECV_PIN, LED);
+>>>>>>> Stashed changes
 }
