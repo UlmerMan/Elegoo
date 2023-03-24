@@ -1,8 +1,11 @@
-#include <car.h>
+#include <elegoo.h>
+
+#define version 3
+
+elegoo car(version);
 
 void setup(){
   Serial.begin(9600); //Begin a serial connection
-  car.init();         //Initialze car. Please put the Version of your robot into the brackets
 }
 
 

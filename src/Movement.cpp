@@ -34,6 +34,18 @@ void elegoo::forward(int speed)
     digitalWrite(in3, LOW);
     digitalWrite(in4, HIGH);
   }
+  if (vers == 4)
+  {
+
+  }
+  if (vers == 5) 
+  {
+
+  }
+  if (vers == 6)
+  {
+
+  }
 }
 /*define back function*/
 void elegoo::back(int speed)
@@ -64,6 +76,18 @@ void elegoo::back(int speed)
     digitalWrite(in2, HIGH);
     digitalWrite(in3, HIGH);
     digitalWrite(in4, LOW);
+  }
+  if (vers == 4)
+  {
+
+  }
+  if (vers == 5) 
+  {
+
+  }
+  if (vers == 6)
+  {
+    
   }
 }
 /*define left function*/
@@ -96,6 +120,18 @@ void elegoo::left(int speed)
     digitalWrite(in3, LOW);
     digitalWrite(in4, HIGH);
   }
+  if (vers == 4)
+  {
+
+  }
+  if (vers == 5) 
+  {
+
+  }
+  if (vers == 6)
+  {
+    
+  }
 }
 /*define right function*/
 void elegoo::right(int speed)
@@ -126,6 +162,18 @@ void elegoo::right(int speed)
     digitalWrite(in2, LOW);
     digitalWrite(in3, HIGH);
     digitalWrite(in4, LOW);
+  }
+  if (vers == 4)
+  {
+
+  }
+  if (vers == 5) 
+  {
+
+  }
+  if (vers == 6)
+  {
+    
   }
 }
 

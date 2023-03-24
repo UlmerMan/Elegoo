@@ -109,6 +109,17 @@ class elegoo
     int in4 = 0;
     int ENA = 0;
     int ENB = 0;
+
+    /*
+    Version Controller
+    1 = v1
+    2 = v2
+    3 = v3
+    4 = v4.0
+    5 = v4.1
+    6 = v4.2
+    */
+
     int vers;
     int keepDistanceValue = 10;
     int PWMA;
