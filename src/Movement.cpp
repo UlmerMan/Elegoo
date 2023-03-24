@@ -4,12 +4,10 @@
 
 controler libPID(0.3, 0.2, 0.0005);
 
-//TODO backleft backright
-//TODO modes
 /*define forward function*/
 void elegoo::forward(int speed)
 {
-  if (version == 1)
+  if (vers == 1)
   {
     analogWrite(ENA, speed);
     analogWrite(ENB, speed);
@@ -18,7 +16,7 @@ void elegoo::forward(int speed)
     digitalWrite(in3, LOW);
     digitalWrite(in4, HIGH);
   }
-  if (version == 2)
+  if (vers == 2)
   {
     analogWrite(ENA, speed);
     analogWrite(ENB, speed);
@@ -27,7 +25,7 @@ void elegoo::forward(int speed)
     digitalWrite(in3, LOW);
     digitalWrite(in4, HIGH);
   }
-  if (version == 3)
+  if (vers == 3)
   {
     analogWrite(ENA, speed);
     analogWrite(ENB, speed);
@@ -35,12 +33,24 @@ void elegoo::forward(int speed)
     digitalWrite(in2, LOW);
     digitalWrite(in3, LOW);
     digitalWrite(in4, HIGH);
+  }
+  if (vers == 4)
+  {
+
+  }
+  if (vers == 5) 
+  {
+
+  }
+  if (vers == 6)
+  {
+
   }
 }
 /*define back function*/
 void elegoo::back(int speed)
 {
-  if (version == 1)
+  if (vers == 1)
   {
     analogWrite(ENA, speed);
     analogWrite(ENB, speed);
@@ -49,7 +59,7 @@ void elegoo::back(int speed)
     digitalWrite(in3, HIGH);
     digitalWrite(in4, LOW);
   }
-  if (version == 2)
+  if (vers == 2)
   {
     analogWrite(ENA, speed);
     analogWrite(ENB, speed);
@@ -58,7 +68,7 @@ void elegoo::back(int speed)
     digitalWrite(in3, HIGH);
     digitalWrite(in4, LOW);
   }
-  if (version == 3)
+  if (vers == 3)
   {
     analogWrite(ENA, speed);
     analogWrite(ENB, speed);
@@ -66,12 +76,24 @@ void elegoo::back(int speed)
     digitalWrite(in2, HIGH);
     digitalWrite(in3, HIGH);
     digitalWrite(in4, LOW);
+  }
+  if (vers == 4)
+  {
+
+  }
+  if (vers == 5) 
+  {
+
+  }
+  if (vers == 6)
+  {
+    
   }
 }
 /*define left function*/
 void elegoo::left(int speed)
 {
-  if (version == 1)
+  if (vers == 1)
   {
     analogWrite(ENA, speed);
     analogWrite(ENB, speed);
@@ -80,7 +102,7 @@ void elegoo::left(int speed)
     digitalWrite(in3, HIGH);
     digitalWrite(in4, LOW);
   }
-  if (version == 2)
+  if (vers == 2)
   {
     analogWrite(ENA, speed);
     analogWrite(ENB, speed);
@@ -89,7 +111,7 @@ void elegoo::left(int speed)
     digitalWrite(in3, HIGH);
     digitalWrite(in4, LOW);
   }
-  if (version == 3)
+  if (vers == 3)
   {
     analogWrite(ENA, speed);
     analogWrite(ENB, speed);
@@ -97,12 +119,24 @@ void elegoo::left(int speed)
     digitalWrite(in2, HIGH);
     digitalWrite(in3, LOW);
     digitalWrite(in4, HIGH);
+  }
+  if (vers == 4)
+  {
+
+  }
+  if (vers == 5) 
+  {
+
+  }
+  if (vers == 6)
+  {
+    
   }
 }
 /*define right function*/
 void elegoo::right(int speed)
 {
-  if (version == 1)
+  if (vers == 1)
   {
     analogWrite(ENA, speed);
     analogWrite(ENB, speed);
@@ -111,7 +145,7 @@ void elegoo::right(int speed)
     digitalWrite(in3, LOW);
     digitalWrite(in4, HIGH);
   }
-  if (version == 2)
+  if (vers == 2)
   {
     analogWrite(ENA, speed);
     analogWrite(ENB, speed);
@@ -120,7 +154,7 @@ void elegoo::right(int speed)
     digitalWrite(in3, HIGH);
     digitalWrite(in4, LOW);
   }
-  if (version == 3)
+  if (vers == 3)
   {
     analogWrite(ENA, speed);
     analogWrite(ENB, speed);
@@ -128,6 +162,18 @@ void elegoo::right(int speed)
     digitalWrite(in2, LOW);
     digitalWrite(in3, HIGH);
     digitalWrite(in4, LOW);
+  }
+  if (vers == 4)
+  {
+
+  }
+  if (vers == 5) 
+  {
+
+  }
+  if (vers == 6)
+  {
+    
   }
 }
 

@@ -8,13 +8,15 @@
 #define echo A4
 #define trig A5
 
-#define defaultVersion 3
 #define defaultSpeed 255
 
 //-------Line Tracking Pins--------//
 #define LineTeacking_Pin_Right  10
 #define LineTeacking_Pin_Middle 4
 #define LineTeacking_Pin_Left   2
+#define PIN_LTL A2
+#define PIN_LTM A1
+#define PIN_LTR A0
 
 //---------- IR REMOTE -------------//
 #define RECV_PIN  12        //Infrared signal receiving pin
@@ -41,11 +43,21 @@
 #define KEY_STAR  16728765
 #define KEY_HASH  16732845
 
+#define PIN_Voltage A3
+
+/*
+#define  v1   1
+#define  v2   2
+#define  v3   3
+#define  v4   4
+#define  v41  5
+#define  v42  6
+*/
 
 class elegoo
 {
   public:
-    elegoo(int vers);  //Constructor
+    elegoo(String version);  //Constructor
     void  forward(int speed);
     void  back(int speed);
     void  left(int speed);
@@ -87,6 +99,8 @@ class elegoo
     bool forwardDistance(int distance);
     void backDistance(int distance, int speed);
     void backDistance(int distance);
+    float getVoltage();
+  
   private:
     Servo *libServo;
     int in1 = 0;
@@ -95,8 +109,26 @@ class elegoo
     int in4 = 0;
     int ENA = 0;
     int ENB = 0;
-    int version;
+
+    /*
+    Version Controller
+    1 = v1
+    2 = v2
+    3 = v3
+    4 = v4.0
+    5 = v4.1
+    6 = v4.2
+    */
+
+    int vers;
     int keepDistanceValue = 10;
+    int PWMA;
+    int PWMB;
+    int AIN1;
+    int BIN1;
+  
+  private:
+    void Setup();
 };
 
 class controler

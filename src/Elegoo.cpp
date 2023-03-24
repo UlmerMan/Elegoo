@@ -40,55 +40,97 @@
 
 // Constructor
 
-elegoo::elegoo(int vers)
+elegoo::elegoo(String version)
 {
-  if (vers == 1)
+  if (version == "v1")
   {
-    vers = version;
+    vers = 1;
     in1 = 9;
     in2 = 8;
     in3 = 7;
     in4 = 6;
     ENA = 10;
     ENB = 5;
+    Setup();
   }
-  if (vers == 2)
+  if (version == "v2")
   {
-    vers = version;
+    vers = 1;
     in1 = 6;
     in2 = 7;
     in3 = 8;
     in4 = 9;
     ENA = 5;
     ENB = 11;
+    Setup();
   }
-  if (vers == 3)
+  if (version == "v3")
   {
-    vers = version;
+    vers = 1;
     in1 = 7;
     in2 = 8;
     in3 = 9;
     in4 = 11;
     ENA = 5;
     ENB = 6;
+    Setup();
   }
-  pinMode(in1, OUTPUT);
-  pinMode(in2, OUTPUT);
-  pinMode(in3, OUTPUT);
-  pinMode(in4, OUTPUT);
-  pinMode(ENA, OUTPUT);
-  pinMode(ENB, OUTPUT);
-  pinMode(trig, OUTPUT);
-  pinMode(echo, INPUT);
-  pinMode(LED, OUTPUT);
-  pinMode(ENB, OUTPUT);
-  pinMode(LineTeacking_Pin_Right, INPUT);
-  pinMode(LineTeacking_Pin_Middle, INPUT);
-  pinMode(LineTeacking_Pin_Left, INPUT);
-  Servo libServo;
-  libServo.attach(3);
-  IRbegin();
+  if (version == "v4")
+  {
+    PWMA = 5;
+    PWMB = 6;
+    AIN1 = 8;
+    BIN1 = 7;
+    Setup();
+  }
+  if (version == "v4.1")
+  {
+    PWMA = 5;
+    PWMB = 6;
+    AIN1 = 7;
+    BIN1 = 8;
+    Setup();
+  }
+  if (version == "v4.2")
+  {
+    PWMA = 5;
+    PWMB = 6;
+    AIN1 = 7;
+    BIN1 = 8;
+    Setup();
+  }
+}
 
-  // IRrecv irrecv(RECV_PIN);
-  // irrecv->begin(RECV_PIN, LED);
+void elegoo::Setup()
+{
+  if (vers <= 3)
+  {
+    pinMode(in1, OUTPUT);
+    pinMode(in2, OUTPUT);
+    pinMode(in3, OUTPUT);
+    pinMode(in4, OUTPUT);
+    pinMode(ENA, OUTPUT);
+    pinMode(ENB, OUTPUT);
+    pinMode(trig, OUTPUT);
+    pinMode(echo, INPUT);
+    pinMode(LED, OUTPUT);
+    pinMode(ENB, OUTPUT);
+    pinMode(LineTeacking_Pin_Right, INPUT);
+    pinMode(LineTeacking_Pin_Middle, INPUT);
+    pinMode(LineTeacking_Pin_Left, INPUT);
+    Servo libServo;
+    libServo.attach(3);
+    IRbegin();
+  }
+  if (vers >= 4)
+  {
+    pinMode(PWMA, OUTPUT);
+    pinMode(PWMB, OUTPUT);
+    pinMode(AIN1, OUTPUT);
+    pinMode(BIN1, OUTPUT);
+    pinMode(PIN_Voltage, INPUT);
+    pinMode(PIN_LTL, INPUT);
+    pinMode(PIN_LTM, INPUT);
+    pinMode(PIN_LTR, INPUT);
+  }
 }

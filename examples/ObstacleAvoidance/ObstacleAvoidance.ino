@@ -1,7 +1,11 @@
 //www.elegoo.com
 
-#include <car.h>
+#include <elegoo.h>
 #include <Servo.h>  //servo library
+
+#define version 3
+
+elegoo car(version);
 Servo myservo;      // create servo object to control servo
 
 int Echo = A4;
