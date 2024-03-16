@@ -55,7 +55,7 @@ elegoo::elegoo(String version)
   }
   if (version == "v2")
   {
-    vers = 1;
+    vers = 2;
     in1 = 6;
     in2 = 7;
     in3 = 8;
@@ -66,7 +66,7 @@ elegoo::elegoo(String version)
   }
   if (version == "v3")
   {
-    vers = 1;
+    vers = 3;
     in1 = 7;
     in2 = 8;
     in3 = 9;
@@ -121,6 +121,8 @@ void elegoo::Setup()
     Servo libServo;
     libServo.attach(3);
     IRbegin();
+    // reset servo to front
+    libServo.write(90);
   }
   if (vers >= 4)
   {
